@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - Dora Pinheiro Confecções</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f4c3a; /* Verde elegante e profundo */
+            --primary-light: #1a6b52;
+            --accent: #d4af37; /* Dourado premium */
+            --light-bg: #f7f9f8;
+            --white: #ffffff;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --border-color: #e5ebe9;
+            --radius: 16px;
+            --shadow-sm: 0 4px 6px rgba(15, 76, 58, 0.05);
+            --shadow-md: 0 10px 30px rgba(15, 76, 58, 0.08);
+            --shadow-hover: 0 15px 35px rgba(15, 76, 58, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--light-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Navegação */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .proposal-id {
+            background: var(--light-bg);
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero / Cabeçalho da Proposta */
+        header.hero {
+            padding: 80px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #0a3327 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--light-bg);
+            transform: skewY(-2deg);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.1em;
+            color: #a8c4bc;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .client-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 25px 50px;
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .client-info div {
+            text-align: left;
+        }
+
+        .client-info span {
+            display: block;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .client-info strong {
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        /* Secções Gerais */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1em;
+        }
+
+        /* Vitrine de Produtos */
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            cursor: zoom-in; /* Cursor de lupa indicando que pode clicar */
+            transition: filter 0.3s ease;
+        }
+        
+        .product-card img:hover {
+            filter: brightness(0.9);
+        }
+
+        .product-info {
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+        }
+
+        .product-info h3 {
+            color: var(--primary);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Modal de Tela Cheia (Lightbox) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        /* Grid de Informações Técnicas */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tech-item h4 {
+            color: var(--primary);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tech-item h4::before {
+            content: '✓';
+            color: var(--accent);
+            font-size: 1.2em;
+        }
+
+        /* Tabela de Orçamento */
+        .budget-table-wrap {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 25px;
+            text-align: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 25px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fcfcfc;
+        }
+
+        .item-desc strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .item-desc small {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        .qty {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+
+        .total-row td {
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.3em;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .total-row .price {
+            color: var(--accent);
+            font-size: 1.2em;
+        }
+
+        .obs-text {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            color: var(--text-main);
+            font-size: 0.95em;
+        }
+
+        /* Condições Comerciais */
+        .conditions {
+            background: var(--primary);
+            color: white;
+            padding: 60px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .conditions-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .conditions-list li {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .conditions-list li::before {
+            content: '❖';
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        .conditions-list li strong {
+            color: var(--accent);
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #111816;
+            color: #a8b3b0;
+            padding: 80px 0 30px;
+            border-top: 5px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        footer h3 {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            color: #111816;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85em;
+        }
+
+        /* Botão de Imprimir (Flutuante) */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Esconder elementos ao imprimir */
+        @media print {
+            .print-btn, nav, .modal-overlay {
+                display: none !important;
+            }
+            body {
+                background: white;
+            }
+            .hero, .conditions {
+                background: white;
+                color: black;
+                border: 1px solid #ccc;
+            }
+            .hero h1, .section-header h2, .conditions-list li strong {
+                color: black;
+            }
+            .hero::after { display: none; }
+            .budget-table-wrap { box-shadow: none; border: 1px solid #eee; }
+            .total-row td, th { background: #eee; color: black; }
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.2em; }
+            .client-info { flex-direction: column; gap: 20px; padding: 25px; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid, .conditions-list {
+                grid-template-columns: 1fr;
+            }
+            .budget-table-wrap {
+                overflow-x: auto;
+            }
+            td, th { min-width: 120px; }
+            .print-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+            }
+            .modal-content {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <img src="imagens/IMG-20260317-WA0019.jpg" alt="Logo Dora Pinheiro" class="logo">
+            <span class="proposal-id">PROPOSTA Nº 015/2026</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <p class="subtitle">Confecção & Alfaiataria Corporativa</p>
+            <h1>Orçamento de Uniformes</h1>
+            <div class="client-info">
+                <div>
+                    <span>Apresentado a</span>
+                    <strong>Clínica de Ultrassonografia da Barra</strong>
+                </div>
+                <div>
+                    <span>Data da Emissão</span>
+                    <strong>17 de março de 2026</strong>
+                </div>
+                <div>
+                    <span>Validade</span>
+                    <strong>10 dias</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. COMPOSIÇÃO E PRODUTOS -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Composição do Pedido Inicial</h2>
+                <p>Kit completo planejado para 12 colaboradores (11 Femininos / 01 Masculino)</p>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-card">
+                    <img src="imagens/IMG-20260311-WA0090.jpg" alt="Uniforme Feminino" title="Clique para ampliar">
+                    <div class="product-info">
+                        <h3>Linha Feminina</h3>
+                        <p>Elegância e conforto térmico para a rotina clínica exigente.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagens/IMG-20260311-WA0092.jpg" alt="Uniforme Masculino" title="Clique para ampliar">
+                    <div class="product-info">
+                        <h3>Linha Masculina</h3>
+                        <p>Postura profissional com alfaiataria de alto padrão e mobilidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Blazer Manga Comprida</h4>
+                    <p>Total de <strong>12 unidades</strong> (11 Fem. / 01 Masc.) confeccionadas em <strong>Cor Verde</strong>, garantindo padronização.</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Calça Social</h4>
+                    <p>Total de <strong>24 unidades</strong> (22 Fem. / 02 Masc.) em <strong>Cor Verde</strong>. Modelagem ergonômica.</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Camisa com Logotipo</h4>
+                    <p>Total de <strong>24 unidades</strong> (22 Fem. / 02 Masc.) em <strong>Cor Branca</strong> com bordado de alta precisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. INVESTIMENTO -->
+    <section style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Valores e Investimento</h2>
+                <p>Detalhamento financeiro da proposta (Opção Manga Curta)</p>
+            </div>
+
+            <div class="budget-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição do Item</th>
+                            <th style="text-align: center;">Quantidade</th>
+                            <th style="text-align: right;">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-desc">
+                                <strong>Blazer Manga Comprida Forrado</strong>
+                                <small>Tecido Two Way | Feminino: R$ 109,00 | Masculino (+20%): R$ 130,80</small>
+                            </td>
+                            <td class="qty" style="text-align: center;">12 un.</td>
+                            <td class="price" style="text-align: right;">R$ 1.329,80</td>
+                        </tr>
+                        <tr>
+                            <td class="item-desc">
+                                <strong>Calça Social de Alfaiataria</strong>
+                                <small>Tecido Two Way | Feminina: R$ 76,00 | Masculina (+20%): R$ 91,20</small>
+                            </td>
+                            <td class="qty" style="text-align: center;">24 un.</td>
+                            <td class="price" style="text-align: right;">R$ 1.854,40</td>
+                        </tr>
+                        <tr>
+                            <td class="item-desc">
+                                <strong>Camisa Manga Curta c/ Logotipo Bordado</strong>
+                                <small>Tecido Tricoline | Feminina: R$ 79,00 | Masculina (+20%): R$ 94,80</small>
+                            </td>
+                            <td class="qty" style="text-align: center;">24 un.</td>
+                            <td class="price" style="text-align: right;">R$ 1.927,60</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2" style="text-align: right; padding-right: 30px;">VALOR TOTAL DO INVESTIMENTO:</td>
+                            <td class="price" style="text-align: right;">R$ 5.111,80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="obs-text">
+                <strong>💡 Opção Alternativa:</strong> Para a escolha de <em>Camisa Manga Comprida</em>, os valores unitários são: Feminina R$ 84,90 e Masculina R$ 101,88. O investimento global nesta configuração passaria a ser <strong>R$ 5.255,76</strong>.
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TÉCNICO -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Especificações Técnicas</h2>
+                <p>Materiais selecionados para durabilidade e apresentação</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item" style="border-top: 4px solid var(--primary);">
+                    <h4>Tecido Two Way</h4>
+                    <p><strong>Composição:</strong> Poliéster com Elastano.<br>
+                    Utilizado na confecção de blazers e calças. A sua principal vantagem é a excelente durabilidade e a característica de não amassar facilmente, mantendo o colaborador com um alinhamento impecável durante todo o expediente.</p>
+                </div>
+                <div class="tech-item" style="border-top: 4px solid var(--accent);">
+                    <h4>Tecido Tricoline</h4>
+                    <p><strong>Composição:</strong> Algodão com Elastano.<br>
+                    Material premium escolhido para as camisas. Oferece alto frescor, toque suave na pele e excelente conforto térmico, além de permitir mobilidade total para as atividades clínicas diárias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COMERCIAL -->
+    <section style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Condições Comerciais</h2>
+                <p>Termos para início e conclusão do projeto</p>
+            </div>
+            <div class="conditions">
+                <ul class="conditions-list">
+                    <li>
+                        <strong>Grade de Tamanhos</strong>
+                        A produção é iniciada mediante o fornecimento da grade completa de tamanhos, aprovada pelo cliente.
+                    </li>
+                    <li>
+                        <strong>Forma de Pagamento</strong>
+                        Sinal de 50% para aprovação e início do pedido. O saldo de 50% deverá ser pago na entrega final das peças.
+                    </li>
+                    <li>
+                        <strong>Prazo de Entrega</strong>
+                        Estimado em 30 dias úteis após o processamento do pagamento do sinal e recebimento formal da grade de tamanhos.
+                    </li>
+                    <li>
+                        <strong>Garantia de Confecção</strong>
+                        Garantimos a qualidade de costura e acabamento das peças contra qualquer defeito de fabricação.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ EMPRESARIAL -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>DP3 CONFECÇÕES EIRELI</h3>
+                    <p>CNPJ: 33.150.176/0001-89</p>
+                    <p>IE: 11.659.926</p>
+                    <img src="imagens/IMG-20260317-WA0019.jpg" alt="Logo White" style="height: 60px; margin-top: 20px; opacity: 0.7;">
+                </div>
+                <div class="footer-address">
+                    <h3>Localização</h3>
+                    <p>Rua Tenente Abel Cunha, 84</p>
+                    <p>Higienópolis - Rio de Janeiro/RJ</p>
+                    <p>CEP: 22059-540</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Atendimento</h3>
+                    <p>E-mail: crisantogomes@gmail.com</p>
+                    <p>Tel: (21) 3868-9655</p>
+                    <p>WhatsApp: (21) 96560-3404</p>
+                    <a href="mailto:crisantogomes@gmail.com" class="contact-link">Entrar em Contato</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Dora Pinheiro Confecções Corporativas. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de impressão flutuante -->
+    <button class="print-btn" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Salvar PDF
+    </button>
+
+    <!-- Modal para Imagem em Tela Cheia -->
+    <div id="image-modal" class="modal-overlay">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Imagem ampliada">
+    </div>
+
+    <!-- Script para funcionamento do Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            const closeBtn = document.querySelector(".close-modal");
+            
+            // Pega todas as imagens dos cards de produtos
+            const images = document.querySelectorAll('.product-card img');
+
+            // Adiciona o evento de clique em cada imagem
+            images.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = "flex";
+                    // Pequeno atraso para a animação de opacidade funcionar
+                    setTimeout(() => modal.classList.add('active'), 10);
+                    modalImg.src = this.src;
+                });
+            });
+
+            // Função para fechar o modal suavemente
+            function closeModal() {
+                modal.classList.remove('active');
+                setTimeout(() => modal.style.display = "none", 300); // Aguarda a transição de opacidade
+            }
+
+            // Fechar ao clicar no "X"
+            closeBtn.addEventListener('click', closeModal);
+
+            // Fechar ao clicar fora da imagem
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Fechar ao apertar a tecla ESC do teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape" && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
